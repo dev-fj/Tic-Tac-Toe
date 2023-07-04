@@ -6,6 +6,7 @@ var jogadorSelecionado = document.getElementById('jogador-selecionado');
 var vencedorSelecionado = document.getElementById('vencedor-selecionado');
 var quadrados = document.getElementsByClassName('quadrado');
 var vencedor = null;
+var comeco = 'X';
 
 mudarJogador('X');
 
@@ -138,7 +139,11 @@ function reiniciar(){
     quadrado.innerHTML = '-';
 
     }
+    jogador = comeco;
+    mudarJogador(jogador);
+    comeco = (comeco === 'X') ? 'O' : 'X';
 
+    // Nesse trecho, o jogador recebe o valor inicial de comeco, depois alterna o jogador e por fim alterna a variavel comeco.
     // mudarJogador('X') aqui ele colocou o mudar jogador, mas eu deixei sem para o O também poder começar o game > fair play né :)
 }
 
